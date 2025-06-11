@@ -1,4 +1,5 @@
 // lib/screens/chat_list_screen.dart
+import 'package:chat_pai/screens/chat_screen.dart';
 import 'package:chat_pai/widgets/chat_list_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -210,7 +211,7 @@ class _ChatListScreenState extends ConsumerState<ChatListScreen>
           ),
           Tab(
             child: _buildTabWithBadge(
-              'IA',
+              'Oro',
               _getUnreadCount(ChatType.ai),
               colorScheme,
             ),
@@ -584,7 +585,7 @@ class _ChatListScreenState extends ConsumerState<ChatListScreen>
   // Métodos de acción
   void _openChat(ChatItem chat) {
     // TODO: Navegar a la pantalla de chat individual
-    Navigator.pushNamed(context, '/chat', arguments: chat);
+    Navigator.push(context, MaterialPageRoute(builder: (context) => ChatScreen()));
   }
 
   void _enterSelectionMode(String chatId) {

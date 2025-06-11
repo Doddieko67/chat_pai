@@ -1,8 +1,13 @@
 // lib/screens/login_screen.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../riverpod/auth_provider.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
+  final VoidCallback? onSwitchToRegister;
+  
+  const LoginScreen({Key? key, this.onSwitchToRegister}) : super(key: key);
+
   @override
   ConsumerState<LoginScreen> createState() => _LoginScreenState();
 }
@@ -12,12 +17,39 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   final TextEditingController passwordController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   bool isPasswordVisible = false;
-  bool isLoading = false;
+
+  @override
+  void initState() {
+    super.initState();
+    // Llenar campos con datos de ejemplo para testing
+    emailController.text = 'test@example.com';
+    passwordController.text = '123456';
+  }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
+    final authState = ref.watch(authProvider);
+    
+    // Escuchar errores y mostrarlos
+    ref.listen<AuthState>(authProvider, (previous, next) {
+      if (next.error != null) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(next.error!),
+            backgroundColor: Colors.red,
+            action: SnackBarAction(
+              label: 'OK',
+              textColor: Colors.white,
+              onPressed: () {
+                ref.read(authProvider.notifier).clearError();
+              },
+            ),
+          ),
+        );
+      }
+    });
     
     return Scaffold(
       body: SafeArea(
@@ -66,6 +98,39 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 ),
                 
                 SizedBox(height: 40),
+                
+                // Datos de prueba
+                Card(
+                  color: colorScheme.surfaceVariant.withOpacity(0.3),
+                  child: Padding(
+                    padding: EdgeInsets.all(12),
+                    child: Column(
+                      children: [
+                        Text(
+                          '🧪 Datos de prueba:',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: colorScheme.primary,
+                          ),
+                        ),
+                        SizedBox(height: 4),
+                        Text(
+                          'Email: test@example.com\nContraseña: 123456',
+                          style: TextStyle(fontSize: 12),
+                        ),
+                        Text(
+                          '(O registra un usuario nuevo)',
+                          style: TextStyle(
+                            fontSize: 10,
+                            fontStyle: FontStyle.italic,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                
+                SizedBox(height: 20),
                 
                 // Campo Email
                 TextFormField(
@@ -122,7 +187,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   alignment: Alignment.centerRight,
                   child: TextButton(
                     onPressed: () {
-                      // TODO: Implementar recuperación de contraseña
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text('Función no implementada en el demo')),
+                      );
                     },
                     child: Text('¿Olvidaste tu contraseña?'),
                   ),
@@ -132,18 +199,13 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 
                 // Botón Iniciar Sesión
                 ElevatedButton(
-                  onPressed: isLoading ? null : () {
+                  onPressed: authState.isLoading ? null : () async {
                     if (formKey.currentState!.validate()) {
-                      setState(() {
-                        isLoading = true;
-                      });
-                      
-                      // TODO: Implementar login
-                      Future.delayed(Duration(seconds: 2), () {
-                        setState(() {
-                          isLoading = false;
-                        });
-                      });
+                      await ref.read(authProvider.notifier).login(
+                        email: emailController.text.trim(),
+                        password: passwordController.text,
+                      );
+                        Navigator.pushReplacementNamed(context, '/home');
                     }
                   },
                   style: ElevatedButton.styleFrom(
@@ -155,7 +217,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     ),
                     elevation: 2,
                   ),
-                  child: isLoading 
+                  child: authState.isLoading 
                     ? SizedBox(
                         height: 20,
                         width: 20,
@@ -196,21 +258,14 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 
                 SizedBox(height: 24),
                 
-                // Botón Google Sign In
+                // Botón Google Sign In (Demo)
                 OutlinedButton.icon(
                   onPressed: () {
-                    // TODO: Implementar Google Sign In
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('Google Sign In no implementado en el demo')),
+                    );
                   },
-                  icon: Container(
-                    width: 20,
-                    height: 20,
-                    child: Image.asset(
-                      'assets/google_logo.png', // Asegúrate de agregar este asset
-                      errorBuilder: (context, error, stackTrace) {
-                        return Icon(Icons.account_circle, size: 20);
-                      },
-                    ),
-                  ),
+                  icon: Icon(Icons.account_circle, size: 20),
                   label: Text('Continuar con Google'),
                   style: OutlinedButton.styleFrom(
                     padding: EdgeInsets.symmetric(vertical: 12),
@@ -234,7 +289,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       style: theme.textTheme.bodyMedium,
                     ),
                     GestureDetector(
-                      onTap: () {
+                      onTap: widget.onSwitchToRegister ?? () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -268,8 +323,12 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   }
 }
 
-// lib/screens/register_screen.dart
+// También necesitas este RegisterScreen para que funcione completamente
 class RegisterScreen extends ConsumerStatefulWidget {
+  final VoidCallback? onSwitchToLogin;
+  
+  const RegisterScreen({Key? key, this.onSwitchToLogin}) : super(key: key);
+
   @override
   ConsumerState<RegisterScreen> createState() => _RegisterScreenState();
 }
@@ -282,23 +341,52 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   bool isPasswordVisible = false;
   bool isConfirmPasswordVisible = false;
-  bool isLoading = false;
   bool acceptTerms = false;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
+    final authState = ref.watch(authProvider);
+    
+    // Escuchar errores y mostrarlos
+    ref.listen<AuthState>(authProvider, (previous, next) {
+      if (next.error != null) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(next.error!),
+            backgroundColor: Colors.red,
+            action: SnackBarAction(
+              label: 'OK',
+              textColor: Colors.white,
+              onPressed: () {
+                ref.read(authProvider.notifier).clearError();
+              },
+            ),
+          ),
+        );
+      }
+      
+      // Si el registro fue exitoso, mostrar mensaje
+      if (previous?.isLoading == true && !next.isLoading && next.isAuthenticated && next.error == null) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('¡Registro exitoso! Bienvenido ${next.user?.name}'),
+            backgroundColor: Colors.green,
+          ),
+        );
+      }
+    });
     
     return Scaffold(
-      appBar: AppBar(
+      appBar: widget.onSwitchToLogin == null ? AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () => Navigator.pop(context),
         ),
-      ),
+      ) : null,
       body: SafeArea(
         child: SingleChildScrollView(
           padding: EdgeInsets.all(24),
@@ -342,7 +430,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                     if (value == null || value.isEmpty) {
                       return 'Ingresa tu nombre';
                     }
-                    if (value.length < 2) {
+                    if (value.trim().length < 2) {
                       return 'El nombre debe tener al menos 2 caracteres';
                     }
                     return null;
@@ -487,18 +575,13 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                 
                 // Botón Registrarse
                 ElevatedButton(
-                  onPressed: (isLoading || !acceptTerms) ? null : () {
+                  onPressed: (authState.isLoading || !acceptTerms) ? null : () async {
                     if (formKey.currentState!.validate()) {
-                      setState(() {
-                        isLoading = true;
-                      });
-                      
-                      // TODO: Implementar registro
-                      Future.delayed(Duration(seconds: 2), () {
-                        setState(() {
-                          isLoading = false;
-                        });
-                      });
+                      await ref.read(authProvider.notifier).register(
+                        name: nameController.text.trim(),
+                        email: emailController.text.trim(),
+                        password: passwordController.text,
+                      );
                     }
                   },
                   style: ElevatedButton.styleFrom(
@@ -510,7 +593,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                     ),
                     elevation: 2,
                   ),
-                  child: isLoading 
+                  child: authState.isLoading 
                     ? SizedBox(
                         height: 20,
                         width: 20,
@@ -551,21 +634,14 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                 
                 SizedBox(height: 24),
                 
-                // Botón Google Sign In
+                // Botón Google Sign In (Demo)
                 OutlinedButton.icon(
                   onPressed: () {
-                    // TODO: Implementar Google Sign In
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('Google Sign In no implementado en el demo')),
+                    );
                   },
-                  icon: Container(
-                    width: 20,
-                    height: 20,
-                    child: Image.asset(
-                      'assets/google_logo.png',
-                      errorBuilder: (context, error, stackTrace) {
-                        return Icon(Icons.account_circle, size: 20);
-                      },
-                    ),
-                  ),
+                  icon: Icon(Icons.account_circle, size: 20),
                   label: Text('Continuar con Google'),
                   style: OutlinedButton.styleFrom(
                     padding: EdgeInsets.symmetric(vertical: 12),
@@ -589,7 +665,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                       style: theme.textTheme.bodyMedium,
                     ),
                     GestureDetector(
-                      onTap: () {
+                      onTap: widget.onSwitchToLogin ?? () {
                         Navigator.pop(context);
                       },
                       child: Text(

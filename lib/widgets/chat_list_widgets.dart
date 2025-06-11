@@ -903,7 +903,7 @@ class ChatFilters extends StatelessWidget {
       case ChatType.therapist:
         return 'Terapeutas';
       case ChatType.ai:
-        return 'Asistente IA';
+        return 'Oro';
     }
   }
 }

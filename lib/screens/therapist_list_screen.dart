@@ -1,4 +1,5 @@
 // lib/screens/therapist_list_screen.dart
+import 'package:chat_pai/screens/therapist_profile_screen.dart';
 import 'package:chat_pai/widgets/therapist_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -224,8 +225,8 @@ class _TherapistListScreenState extends ConsumerState<TherapistListScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => TherapistDetailScreen(
-                    therapist: therapist,
+                  builder: (context) => TherapistProfileScreen(
+                    therapistId: therapist.id,
                   ),
                 ),
               );
