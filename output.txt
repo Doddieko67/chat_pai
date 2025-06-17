@@ -1,0 +1,157 @@
+Launching lib/main.dart on 2201116PG in debug mode...
+Running Gradle task 'assembleDebug'...                          
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+3 warnings
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+3 warnings
+Running Gradle task 'assembleDebug'...                             18.3s
+✓ Built build/app/outputs/flutter-apk/app-debug.apk
+Installing build/app/outputs/flutter-apk/app-debug.apk...           5.2s
+I/flutter (14765): [IMPORTANT:flutter/shell/platform/android/android_context_vk_impeller.cc(61)] Using the Impeller rendering backend (Vulkan).
+D/FlutterGeolocator(14765): Attaching Geolocator to activity
+D/FlutterGeolocator(14765): Creating service.
+D/FlutterGeolocator(14765): Binding to location service.
+D/SurfaceView(14765): UPDATE Surface(name=SurfaceView[com.example.pai_app/com.example.pai_app.MainActivity])/@0xad03757, mIsProjectionMode = false
+D/FlutterGeolocator(14765): Geolocator foreground service connected
+D/FlutterGeolocator(14765): Initializing Geolocator services
+D/FlutterGeolocator(14765): Flutter engine connected. Connected engine count 1
+Syncing files to device 2201116PG...                            
+I/flutter (14765): 🔥 Firebase inicializado correctamente
+Syncing files to device 2201116PG...                                86ms
+
+Flutter run key commands.
+r Hot reload. 🔥🔥🔥
+R Hot restart.
+h List all available interactive commands.
+d Detach (terminate "flutter run" but leave application running).
+c Clear the screen
+q Quit (terminate the application on the device).
+
+A Dart VM Service on 2201116PG is available at: http://127.0.0.1:43659/7xCjRj4DS5Q=/
+I/Choreographer(14765): Skipped 102 frames!  The application may be doing too much work on its main thread.
+W/Looper  (14765): PerfMonitor doFrame : time=2ms vsyncFrame=0 latency=1703ms procState=-1 historyMsgCount=1
+The Flutter DevTools debugger and profiler on 2201116PG is available at: http://127.0.0.1:9100?uri=http://127.0.0.1:43659/7xCjRj4DS5Q=/
+D/DecorView[](14765): getWindowModeFromSystem  windowmode is 1
+D/DecorView[](14765): updateDecorCaptionStatus windowMode is 1
+D/VRI[MainActivity](14765): vri.reportNextDraw android.view.ViewRootImpl.performTraversals:4013 android.view.ViewRootImpl.doTraversal:2725 android.view.ViewRootImpl$TraversalRunnable.run:9812 android.view.Choreographer$CallbackRecord.run:1505 android.view.Choreographer$CallbackRecord.run:1513 
+D/VRI[MainActivity](14765): vri.Setup new sync id=0 syncSeqId=0
+D/example.pai_app(14765): MiuiProcessManagerServiceStub setSchedFifo
+I/MiuiProcessManagerImpl(14765): setSchedFifo pid:14765, mode:3
+E/libEGL  (14765): pre_cache appList: com.sina.weibo,com.ss.android.article.news,com.taobao.taobao,com.smile.gifmaker,com.ss.android.ugc.aweme,com.tencent.mm,tv.danmaku.bili,,
+W/DynamiteModule(14765): Local module descriptor class for com.google.android.gms.providerinstaller.dynamite not found.
+E/perf_hint(14765): Session creation failed, mPreferredRateNanos: -1
+D/VRI[MainActivity](14765): vri.reportDrawFinished syncSeqId=0 android.view.ViewRootImpl.lambda$createSyncIfNeeded$4$android-view-ViewRootImpl:4081 android.view.ViewRootImpl$$ExternalSyntheticLambda2.run:6 android.os.Handler.handleCallback:942 android.os.Handler.dispatchMessage:99 android.os.Looper.loopOnce:211 
+I/DynamiteModule(14765): Considering local module com.google.android.gms.providerinstaller.dynamite:0 and remote module com.google.android.gms.providerinstaller.dynamite:0
+W/ProviderInstaller(14765): Failed to load providerinstaller module: No acceptable module com.google.android.gms.providerinstaller.dynamite found. Local version is 0 and remote version is 0.
+D/DecorView[](14765): onWindowFocusChanged hasWindowFocus true
+I/HandWritingStubImpl(14765): refreshLastKeyboardType: 1
+I/HandWritingStubImpl(14765): getCurrentKeyboardType: 1
+D/nativeloader(14765): Configuring clns-6 for other apk /system/framework/com.android.media.remotedisplay.jar. target_sdk_version=36, uses_libraries=ALL, library_path=/data/app/~~jpZfVZdWMnin-KGyaobcPg==/com.google.android.gms-zQMpQPent3j9yMNtg_4_-g==/lib/arm64:/data/app/~~jpZfVZdWMnin-KGyaobcPg==/com.google.android.gms-zQMpQPent3j9yMNtg_4_-g==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+D/nativeloader(14765): Extending system_exposed_libraries: libbinauralrenderer_wrapper.qti.so:libhoaeffects.qti.so:libQOC.qti.so:libmisys_jni.xiaomi.so:libupdateprof.qti.so:libthermalclient.qti.so:libQOC.qti.so:libdiag_system.qti.so:libqape.qti.so:liblistenjni.qti.so:libxiaomi_modemdumpsdx55_jni.modem.so:libxiaomi_modemdump_jni.modem.so
+W/example.pai_app(14765): Loading /data/misc/apexdata/com.android.art/dalvik-cache/arm64/system@framework@com.android.location.provider.jar@classes.odex non-executable as it requires an image which we failed to load
+D/nativeloader(14765): Configuring clns-7 for other apk /system/framework/com.android.location.provider.jar. target_sdk_version=36, uses_libraries=ALL, library_path=/data/app/~~jpZfVZdWMnin-KGyaobcPg==/com.google.android.gms-zQMpQPent3j9yMNtg_4_-g==/lib/arm64:/data/app/~~jpZfVZdWMnin-KGyaobcPg==/com.google.android.gms-zQMpQPent3j9yMNtg_4_-g==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+D/nativeloader(14765): Extending system_exposed_libraries: libbinauralrenderer_wrapper.qti.so:libhoaeffects.qti.so:libQOC.qti.so:libmisys_jni.xiaomi.so:libupdateprof.qti.so:libthermalclient.qti.so:libQOC.qti.so:libdiag_system.qti.so:libqape.qti.so:liblistenjni.qti.so:libxiaomi_modemdumpsdx55_jni.modem.so:libxiaomi_modemdump_jni.modem.so
+D/nativeloader(14765): Configuring clns-8 for other apk /data/app/~~jpZfVZdWMnin-KGyaobcPg==/com.google.android.gms-zQMpQPent3j9yMNtg_4_-g==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~jpZfVZdWMnin-KGyaobcPg==/com.google.android.gms-zQMpQPent3j9yMNtg_4_-g==/lib/arm64:/data/app/~~jpZfVZdWMnin-KGyaobcPg==/com.google.android.gms-zQMpQPent3j9yMNtg_4_-g==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+I/HandWritingStubImpl(14765): getCurrentKeyboardType: 1
+W/ProviderInstaller(14765): Failed to report request stats: com.google.android.gms.common.security.ProviderInstallerImpl.reportRequestStats [class android.content.Context, long, long]
+W/example.pai_app(14765): Accessing hidden method Ldalvik/system/VMStack;->getStackClass2()Ljava/lang/Class; (unsupported, reflection, allowed)
+E/GoogleApiManager(14765): Failed to get service from broker. 
+E/GoogleApiManager(14765): java.lang.SecurityException: Unknown calling package name 'com.google.android.gms'.
+E/GoogleApiManager(14765): 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3033)
+E/GoogleApiManager(14765): 	at android.os.Parcel.createException(Parcel.java:3017)
+E/GoogleApiManager(14765): 	at android.os.Parcel.readException(Parcel.java:3000)
+E/GoogleApiManager(14765): 	at android.os.Parcel.readException(Parcel.java:2942)
+E/GoogleApiManager(14765): 	at axtl.a(:com.google.android.gms@252234029@25.22.34 (190400-769260661):36)
+E/GoogleApiManager(14765): 	at axrs.z(:com.google.android.gms@252234029@25.22.34 (190400-769260661):143)
+E/GoogleApiManager(14765): 	at awyv.run(:com.google.android.gms@252234029@25.22.34 (190400-769260661):42)
+E/GoogleApiManager(14765): 	at android.os.Handler.handleCallback(Handler.java:942)
+E/GoogleApiManager(14765): 	at android.os.Handler.dispatchMessage(Handler.java:99)
+E/GoogleApiManager(14765): 	at chad.mH(:com.google.android.gms@252234029@25.22.34 (190400-769260661):1)
+E/GoogleApiManager(14765): 	at chad.dispatchMessage(:com.google.android.gms@252234029@25.22.34 (190400-769260661):5)
+E/GoogleApiManager(14765): 	at android.os.Looper.loopOnce(Looper.java:211)
+E/GoogleApiManager(14765): 	at android.os.Looper.loop(Looper.java:300)
+E/GoogleApiManager(14765): 	at android.os.HandlerThread.run(HandlerThread.java:67)
+W/FlagRegistrar(14765): Failed to register com.google.android.gms.providerinstaller#com.example.pai_app
+W/FlagRegistrar(14765): fghm: 17: 17: API: Phenotype.API is not available on this device. Connection failed with: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null}
+W/FlagRegistrar(14765): 	at fgho.a(:com.google.android.gms@252234029@25.22.34 (190400-769260661):13)
+W/FlagRegistrar(14765): 	at gbtj.d(:com.google.android.gms@252234029@25.22.34 (190400-769260661):3)
+W/FlagRegistrar(14765): 	at gbtl.run(:com.google.android.gms@252234029@25.22.34 (190400-769260661):130)
+W/FlagRegistrar(14765): 	at gbvs.execute(:com.google.android.gms@252234029@25.22.34 (190400-769260661):1)
+W/FlagRegistrar(14765): 	at gbtt.f(:com.google.android.gms@252234029@25.22.34 (190400-769260661):1)
+W/FlagRegistrar(14765): 	at gbtt.m(:com.google.android.gms@252234029@25.22.34 (190400-769260661):99)
+W/FlagRegistrar(14765): 	at gbtt.r(:com.google.android.gms@252234029@25.22.34 (190400-769260661):17)
+W/FlagRegistrar(14765): 	at eyqj.hX(:com.google.android.gms@252234029@25.22.34 (190400-769260661):35)
+W/FlagRegistrar(14765): 	at emvm.run(:com.google.android.gms@252234029@25.22.34 (190400-769260661):12)
+W/FlagRegistrar(14765): 	at gbvs.execute(:com.google.android.gms@252234029@25.22.34 (190400-769260661):1)
+W/FlagRegistrar(14765): 	at emvn.b(:com.google.android.gms@252234029@25.22.34 (190400-769260661):18)
+W/FlagRegistrar(14765): 	at emwc.b(:com.google.android.gms@252234029@25.22.34 (190400-769260661):36)
+W/FlagRegistrar(14765): 	at emwe.d(:com.google.android.gms@252234029@25.22.34 (190400-769260661):25)
+W/FlagRegistrar(14765): 	at awwd.c(:com.google.android.gms@252234029@25.22.34 (190400-769260661):9)
+W/FlagRegistrar(14765): 	at awyt.q(:com.google.android.gms@252234029@25.22.34 (190400-769260661):48)
+W/FlagRegistrar(14765): 	at awyt.d(:com.google.android.gms@252234029@25.22.34 (190400-769260661):10)
+W/FlagRegistrar(14765): 	at awyt.g(:com.google.android.gms@252234029@25.22.34 (190400-769260661):185)
+W/FlagRegistrar(14765): 	at awyt.onConnectionFailed(:com.google.android.gms@252234029@25.22.34 (190400-769260661):2)
+W/FlagRegistrar(14765): 	at awyv.run(:com.google.android.gms@252234029@25.22.34 (190400-769260661):70)
+W/FlagRegistrar(14765): 	at android.os.Handler.handleCallback(Handler.java:942)
+W/FlagRegistrar(14765): 	at android.os.Handler.dispatchMessage(Handler.java:99)
+W/FlagRegistrar(14765): 	at chad.mH(:com.google.android.gms@252234029@25.22.34 (190400-769260661):1)
+W/FlagRegistrar(14765): 	at chad.dispatchMessage(:com.google.android.gms@252234029@25.22.34 (190400-769260661):5)
+W/FlagRegistrar(14765): 	at android.os.Looper.loopOnce(Looper.java:211)
+W/FlagRegistrar(14765): 	at android.os.Looper.loop(Looper.java:300)
+W/FlagRegistrar(14765): 	at android.os.HandlerThread.run(HandlerThread.java:67)
+W/FlagRegistrar(14765): Caused by: awur: 17: API: Phenotype.API is not available on this device. Connection failed with: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null}
+W/FlagRegistrar(14765): 	at axre.a(:com.google.android.gms@252234029@25.22.34 (190400-769260661):15)
+W/FlagRegistrar(14765): 	at awwg.a(:com.google.android.gms@252234029@25.22.34 (190400-769260661):1)
+W/FlagRegistrar(14765): 	at awwd.c(:com.google.android.gms@252234029@25.22.34 (190400-769260661):5)
+W/FlagRegistrar(14765): 	... 12 more
+D/nativeloader(14765): Load /data/app/~~jpZfVZdWMnin-KGyaobcPg==/com.google.android.gms-zQMpQPent3j9yMNtg_4_-g==/base.apk!/lib/arm64-v8a/libconscrypt_gmscore_jni.so using ns clns-8 from class loader (caller=/data/app/~~jpZfVZdWMnin-KGyaobcPg==/com.google.android.gms-zQMpQPent3j9yMNtg_4_-g==/base.apk): ok
+V/NativeCrypto(14765): Registering com/google/android/gms/org/conscrypt/NativeCrypto's 315 native methods...
+W/example.pai_app(14765): Accessing hidden method Ljava/security/spec/ECParameterSpec;->getCurveName()Ljava/lang/String; (unsupported, reflection, allowed)
+I/ProviderInstaller(14765): Installed default security provider GmsCore_OpenSSL
+W/example.pai_app(14765): Accessing hidden field Ljava/net/Socket;->impl:Ljava/net/SocketImpl; (unsupported, reflection, allowed)
+W/example.pai_app(14765): Accessing hidden method Ljava/security/spec/ECParameterSpec;->setCurveName(Ljava/lang/String;)V (unsupported, reflection, allowed)
+W/Firestore(14765): (25.1.3) [WatchStream]: (5b0c6b4) Stream closed with status: Status{code=PERMISSION_DENIED, description=Cloud Firestore API has not been used in project chat-pai before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=chat-pai then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry., cause=null}.
+W/Firestore(14765): (25.1.3) [OnlineStateTracker]: Could not reach Cloud Firestore backend. Connection failed 1 times. Most recent error: Status{code=PERMISSION_DENIED, description=Cloud Firestore API has not been used in project chat-pai before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=chat-pai then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry., cause=null}
+W/Firestore(14765): This typically indicates that your device does not have a healthy Internet connection at the moment. The client will operate in offline mode until it is able to successfully connect to the backend.
+
+══╡ EXCEPTION CAUGHT BY SCHEDULER LIBRARY ╞═════════════════════════════════════════════════════════
+The following assertion was thrown during a scheduler callback:
+Controller's length property (4) does not match the number of tabs (3) present in TabBar's tabs
+property.
+
+When the exception was thrown, this was the stack:
+#0      _TabBarState._debugScheduleCheckHasValidTabsCount.<anonymous closure>.<anonymous closure> (package:flutter/src/material/tabs.dart:1802:11)
+#1      _TabBarState._debugScheduleCheckHasValidTabsCount.<anonymous closure> (package:flutter/src/material/tabs.dart:1808:8)
+#2      SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1438:15)
+#3      SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1365:11)
+#4      SchedulerBinding._handleDrawFrame (package:flutter/src/scheduler/binding.dart:1204:5)
+#5      _invoke (dart:ui/hooks.dart:331:13)
+#6      PlatformDispatcher._drawFrame (dart:ui/platform_dispatcher.dart:444:5)
+#7      _drawFrame (dart:ui/hooks.dart:303:31)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+Another exception was thrown: A RenderFlex overflowed by 13 pixels on the right.
+Another exception was thrown: Controller's length property (4) does not match the number of tabs (3) present in TabBar's tabs property.
+D/ProfileInstaller(14765): Installing profile for com.example.pai_app
+E/GoogleApiManager(14765): Failed to get service from broker. 
+E/GoogleApiManager(14765): java.lang.SecurityException: Unknown calling package name 'com.google.android.gms'.
+E/GoogleApiManager(14765): 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3033)
+E/GoogleApiManager(14765): 	at android.os.Parcel.createException(Parcel.java:3017)
+E/GoogleApiManager(14765): 	at android.os.Parcel.readException(Parcel.java:3000)
+E/GoogleApiManager(14765): 	at android.os.Parcel.readException(Parcel.java:2942)
+E/GoogleApiManager(14765): 	at axtl.a(:com.google.android.gms@252234029@25.22.34 (190400-769260661):36)
+E/GoogleApiManager(14765): 	at axrs.z(:com.google.android.gms@252234029@25.22.34 (190400-769260661):143)
+E/GoogleApiManager(14765): 	at awyv.run(:com.google.android.gms@252234029@25.22.34 (190400-769260661):42)
+E/GoogleApiManager(14765): 	at android.os.Handler.handleCallback(Handler.java:942)
+E/GoogleApiManager(14765): 	at android.os.Handler.dispatchMessage(Handler.java:99)
+E/GoogleApiManager(14765): 	at chad.mH(:com.google.android.gms@252234029@25.22.34 (190400-769260661):1)
+E/GoogleApiManager(14765): 	at chad.dispatchMessage(:com.google.android.gms@252234029@25.22.34 (190400-769260661):5)
+E/GoogleApiManager(14765): 	at android.os.Looper.loopOnce(Looper.java:211)
+E/GoogleApiManager(14765): 	at android.os.Looper.loop(Looper.java:300)
+E/GoogleApiManager(14765): 	at android.os.HandlerThread.run(HandlerThread.java:67)

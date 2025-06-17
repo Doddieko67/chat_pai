@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "148764616650",
+    "project_id": "chat-pai",
+    "storage_bucket": "chat-pai.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148764616650:android:21bc47a9fe89adfe1d9133",
+        "android_client_info": {
+          "package_name": "com.example.pai_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "148764616650-o9bpgbk4v2do0irjpegujfcrp4vu95h4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pai_app",
+            "certificate_hash": "a5ad29cffaf99219ba45669208d88338772215f7"
+          }
+        },
+        {
+          "client_id": "148764616650-0tu4k5c62jbbfqtvv42fojs9pe958207.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaQS0cMoOm6mI36i2-qFCGcy7Z6HFXXQ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "148764616650-0tu4k5c62jbbfqtvv42fojs9pe958207.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "148764616650-gppq4etc42pjqnub6nttsbs8ndou6b92.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.paiApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
